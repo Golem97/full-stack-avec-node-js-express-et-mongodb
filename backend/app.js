@@ -4,6 +4,8 @@ const mongoose = require('mongoose');
 
 const stuffRoutes = require('./routes/stuff');
 
+const userRoutes = require('./routes/user'); 
+
 mongoose.connect('mongodb+srv://nathben97:D5p6856r@cluster0.mzp64.mongodb.net/Project0?retryWrites=true&w=majority',
 { useNewUrlParser: true,
   useUnifiedTopology: true })
@@ -21,4 +23,5 @@ app.use(express.json());
 
 
 app.use('/api/stuff', stuffRoutes);
+app.use('/api/auth', userRoutes); 
 module.exports =app;
